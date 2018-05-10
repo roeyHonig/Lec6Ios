@@ -52,6 +52,7 @@
                                         <connections>
                                             <outlet property="icon" destination="PPe-Oy-Rge" id="u1i-GI-jIt"/>
                                             <outlet property="stationLabel" destination="qVc-fd-FzL" id="u5b-WR-NAT"/>
+                                            <segue destination="YST-mq-07M" kind="show" id="zO8-Jj-oBk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -75,6 +76,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756" y="184"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="9zz-k0-Lyx">
+            <objects>
+                <viewController id="YST-mq-07M" customClass="DetailsViewController" customModule="Lec6Ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USf-bm-Wfg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Gge-8v-be9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uu-Ty-iE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="182"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G35-hK-yEi">
