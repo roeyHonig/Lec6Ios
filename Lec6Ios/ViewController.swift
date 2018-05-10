@@ -36,3 +36,22 @@ class ViewController: UIViewController{
 
 }
 
+var data = ["Savidor","Hagana","Mercaz","University"]
+
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return data.count
+        }
+
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            // deque cell using the id from the storyboard
+            // the exclamation mark ! is me telling swift i'm a 100% sure i do have a cell and the program won't crash
+            // "as" is forcing a casting, because we technicall get a UITableViewCell, but our widget (of type Label) is in the Class we creaated StationTableViewCell (which don't worry, completlly extends the UITableViewCell)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "station_cell") as! StationsTableViewCell
+            
+            cell.stationLabel.text = data[indexPath.row]
+            
+            return cell
+        }
+}
