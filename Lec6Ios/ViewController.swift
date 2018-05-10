@@ -11,27 +11,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBAction func dateChamger(_ sender: UIDatePicker) {
-        print(sender.date)
-        //dateLabel.text = sender.date.description
-        // or just use our regular way to inject values into print
-        //dateLabel.text = "\(sender.date)"
-        
-        //but we want to use something more convinent called DateFormater
-        // convert Date to String, instantiate a DateFormatter object
-        let dateFormatter = DateFormatter()
-        
-        // initaliaze our DateFormatter Object using Enum .dateStyle
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-        
-        //use dateFormatter to set the label
-        let dateString = dateFormatter.string(from: sender.date)
-        dateLabel.text = dateString
-        
+    // what does the "!" means
+    // let's ask the question first, who creates an object of UIViewController?
+    // in Android, did i used to constract my MainActivity?, no, ofcourse not!!!
+    // the OS instantiate the UIViewController, and in swift they will initaliaze some value if i don't take care of it
+    // the "!" kind set us back to java, it tells the OS, when it creates this UIViewController, to releax
+    
+    // var firstName: String! // I'm telling the OS to relax -> The Value will be initialiazed
+    // this is called explicitlly unwrapped optional
+    
+    @IBOutlet weak var stationPicker: UIPickerView! {
+        // property observer
+        didSet{
+            // once xcode sets the value of the picker -> print the picker is ready
+            print("The PIcker is Ready")
+        }
     }
+    
+    
+    
     
     
     
