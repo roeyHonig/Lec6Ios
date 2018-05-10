@@ -10,7 +10,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    var stations = ["Stations","Hagana","ashalom","University"]
+    
+    
+    
     // what does the "!" means
     // let's ask the question first, who creates an object of UIViewController?
     // in Android, did i used to constract my MainActivity?, no, ofcourse not!!!
@@ -38,6 +42,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //we need a delegate (kind like the adapter. in swift it's just a protocol we need to implement) and a datasource
+        stationPicker.delegate = self // that is, ViewController, the class we're in right now is implementing the delegate protocol throught the other
+        // swift file we wrote "pickerDekegate.swift"
+        stationPicker.dataSource = self  // same thing
+        
+        //
     }
 
     override func didReceiveMemoryWarning() {
