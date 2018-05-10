@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         // property observer
         didSet{
             // once xcode sets the value of the picker -> print the picker is ready
+            // think about how moderen swift is as a languge, this is like an event listener we had in java
+            // swift is much more real time in its core then java
             print("The PIcker is Ready")
         }
     }
