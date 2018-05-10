@@ -10,6 +10,7 @@ import UIKit
 
 class StationsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var stationLabel: UILabel!
     
     
