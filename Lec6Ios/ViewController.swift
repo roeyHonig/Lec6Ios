@@ -11,10 +11,27 @@
 import UIKit
 
 class ViewController: UIViewController{
-    
-    
+    var data = ["Savidor","Hagana","Mercaz","University"]
+    var animals = [
+        [
+            Animal(name:"Fish", image: #imageLiteral(resourceName: "icons8-fish"), animalTYpe: AnimalType.Wild),
+            Animal(name:"Bear", image: #imageLiteral(resourceName: "icons8-bear"), animalTYpe: AnimalType.Wild),
+            Animal(name:"Elphent", image: #imageLiteral(resourceName: "icons8-elephant") , animalTYpe: AnimalType.Wild),
+            ],
+        [
+            Animal(name:"Duck", image: #imageLiteral(resourceName: "icons8-duck"), animalTYpe: AnimalType.Farm),
+            Animal(name:"Bunny", image: #imageLiteral(resourceName: "icons8-rabbit"), animalTYpe: AnimalType.Farm),
+            Animal(name:"Rooster", image: #imageLiteral(resourceName: "icons8-chicken"), animalTYpe: AnimalType.Farm),
+            ],
+        [
+            Animal(name:"Dog", image: #imageLiteral(resourceName: "icons8-dog"), animalTYpe: AnimalType.Pet),
+            Animal(name:"Snake", image: #imageLiteral(resourceName: "icons8-year_of_snake"), animalTYpe: AnimalType.Pet),
+            Animal(name:"Lion", image: #imageLiteral(resourceName: "icons8-house_lannister"), animalTYpe: AnimalType.Pet)
+        ]
+    ]
     //hi
     
+    @IBOutlet weak var animalsTableView: UITableView!
     
     
     
@@ -23,8 +40,8 @@ class ViewController: UIViewController{
         // Do any additional setup after loading the view, typically from a nib.
         
         //we need a delegate (kind like the adapter. in swift it's just a protocol we need to implement) and a datasource
-        
-        
+        animalsTableView.delegate = self
+        animalsTableView.dataSource = self
         //
     }
 
@@ -36,24 +53,7 @@ class ViewController: UIViewController{
 
 }
 
-var data = ["Savidor","Hagana","Mercaz","University"]
-var animals = [
-                [
-                Animal(name:"Fish", image: #imageLiteral(resourceName: "icons8-fish"), animalTYpe: AnimalType.Wild),
-                Animal(name:"Bear", image: #imageLiteral(resourceName: "icons8-bear"), animalTYpe: AnimalType.Wild),
-                Animal(name:"Elphent", image: #imageLiteral(resourceName: "icons8-elephant") , animalTYpe: AnimalType.Wild),
-                ],
-                [
-                Animal(name:"Duck", image: #imageLiteral(resourceName: "icons8-duck"), animalTYpe: AnimalType.Farm),
-                Animal(name:"Bunny", image: #imageLiteral(resourceName: "icons8-rabbit"), animalTYpe: AnimalType.Farm),
-                Animal(name:"Rooster", image: #imageLiteral(resourceName: "icons8-chicken"), animalTYpe: AnimalType.Farm),
-                ],
-                [
-                Animal(name:"Dog", image: #imageLiteral(resourceName: "icons8-dog"), animalTYpe: AnimalType.Pet),
-                Animal(name:"Snake", image: #imageLiteral(resourceName: "icons8-year_of_snake"), animalTYpe: AnimalType.Pet),
-                Animal(name:"Lion", image: #imageLiteral(resourceName: "icons8-house_lannister"), animalTYpe: AnimalType.Pet)
-                ]
-]
+
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
