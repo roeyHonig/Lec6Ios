@@ -39,6 +39,9 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // comment the following line, or edit it to display a defult seperator line
+        animalsTableView.separatorColor = UIColor.clear
+        
         //we need a delegate (kind like the adapter. in swift it's just a protocol we need to implement) and a datasource
         animalsTableView.delegate = self
         animalsTableView.dataSource = self
